@@ -93,7 +93,7 @@ class PickingListUserAssigner implements PickingListUserAssignerInterface
     /**
      * @param \Generated\Shared\Transfer\UserCollectionTransfer $userCollectionTransfer
      *
-     * @return list<string>
+     * @return array<string>
      */
     protected function extractUserUuidsApplicableForPickingListUnassignment(UserCollectionTransfer $userCollectionTransfer): array
     {

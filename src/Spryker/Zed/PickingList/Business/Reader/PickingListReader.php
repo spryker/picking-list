@@ -32,7 +32,7 @@ class PickingListReader implements PickingListReaderInterface
     protected PickingListMapperInterface $pickingListMapper;
 
     /**
-     * @var list<\Spryker\Zed\PickingListExtension\Dependency\Plugin\PickingListCollectionExpanderPluginInterface>
+     * @var array<\Spryker\Zed\PickingListExtension\Dependency\Plugin\PickingListCollectionExpanderPluginInterface>
      */
     protected array $pickingListCollectionExpanderPlugins;
 

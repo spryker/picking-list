@@ -33,7 +33,7 @@ class GeneratePickingListsCommandByOrderPlugin extends AbstractPlugin implements
      * @param \Orm\Zed\Sales\Persistence\SpySalesOrder $orderEntity
      * @param \Spryker\Zed\Oms\Business\Util\ReadOnlyArrayObject $data
      *
-     * @return list<\Generated\Shared\Transfer\PickingListTransfer>
+     * @return array<\Generated\Shared\Transfer\PickingListTransfer>
      */
     public function run(array $orderItems, SpySalesOrder $orderEntity, ReadOnlyArrayObject $data)
     {

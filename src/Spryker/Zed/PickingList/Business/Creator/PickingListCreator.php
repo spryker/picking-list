@@ -53,7 +53,7 @@ class PickingListCreator implements PickingListCreatorInterface
     protected PickingListDistinguisherInterface $pickingListDistinguisher;
 
     /**
-     * @var list<\Spryker\Zed\PickingListExtension\Dependency\Plugin\PickingListPostCreatePluginInterface>
+     * @var array<\Spryker\Zed\PickingListExtension\Dependency\Plugin\PickingListPostCreatePluginInterface>
      */
     protected array $pickingListPostCreatePlugins;
 

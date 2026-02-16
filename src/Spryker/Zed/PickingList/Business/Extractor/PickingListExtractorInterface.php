@@ -15,7 +15,7 @@ interface PickingListExtractorInterface
     /**
      * @param \Generated\Shared\Transfer\PickingListCollectionTransfer $pickingListCollectionTransfer
      *
-     * @return list<string>
+     * @return array<string>
      */
     public function extraWarehouseUuidsFromPickingListCollection(
         PickingListCollectionTransfer $pickingListCollectionTransfer
@@ -24,7 +24,7 @@ interface PickingListExtractorInterface
     /**
      * @param \Generated\Shared\Transfer\PickingListCollectionTransfer $pickingListCollectionTransfer
      *
-     * @return list<string>
+     * @return array<string>
      */
     public function extraUserUuidsFromPickingListCollection(
         PickingListCollectionTransfer $pickingListCollectionTransfer

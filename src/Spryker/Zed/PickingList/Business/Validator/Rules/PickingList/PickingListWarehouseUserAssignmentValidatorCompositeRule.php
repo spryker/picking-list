@@ -98,8 +98,8 @@ class PickingListWarehouseUserAssignmentValidatorCompositeRule extends AbstractP
     }
 
     /**
-     * @param list<string> $warehouseUuids
-     * @param list<string> $userUuids
+     * @param array<string> $warehouseUuids
+     * @param array<string> $userUuids
      *
      * @return \Generated\Shared\Transfer\WarehouseUserAssignmentCriteriaTransfer
      */
