@@ -18,19 +18,11 @@ class WarehouseUserAssignmentReader implements WarehouseUserAssignmentReaderInte
      */
     protected PickingListToWarehouseUserInterface $warehouseUserFacade;
 
-    /**
-     * @param \Spryker\Zed\PickingList\Dependency\Facade\PickingListToWarehouseUserInterface $warehouseUserFacade
-     */
     public function __construct(PickingListToWarehouseUserInterface $warehouseUserFacade)
     {
         $this->warehouseUserFacade = $warehouseUserFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\WarehouseUserAssignmentCriteriaTransfer $warehouseUserAssignmentCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\WarehouseUserAssignmentCollectionTransfer
-     */
     public function getWarehouseUserAssignmentCollection(
         WarehouseUserAssignmentCriteriaTransfer $warehouseUserAssignmentCriteriaTransfer
     ): WarehouseUserAssignmentCollectionTransfer {

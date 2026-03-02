@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\UserCollectionTransfer;
 
 interface PickingListUserAssignerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\UserCollectionTransfer $userCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\UserCollectionTransfer
-     */
     public function unassignPickingListsFromUsers(UserCollectionTransfer $userCollectionTransfer): UserCollectionTransfer;
 }

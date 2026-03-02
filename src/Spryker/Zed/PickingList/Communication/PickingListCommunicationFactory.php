@@ -21,17 +21,11 @@ use Spryker\Zed\PickingList\PickingListDependencyProvider;
  */
 class PickingListCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\PickingList\Communication\Mapper\PickingListMapperInterface
-     */
     public function createPickingListMapper(): PickingListMapperInterface
     {
         return new PickingListMapper();
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Dependency\Facade\PickingListToSalesFacadeInterface
-     */
     public function getSalesFacade(): PickingListToSalesFacadeInterface
     {
         return $this->getProvidedDependency(PickingListDependencyProvider::FACADE_SALES);

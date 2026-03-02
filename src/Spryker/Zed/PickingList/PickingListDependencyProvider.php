@@ -56,11 +56,6 @@ class PickingListDependencyProvider extends AbstractBundleDependencyProvider
      */
     public const PLUGINS_PICKING_LIST_COLLECTION_EXPANDER = 'PLUGINS_PICKING_LIST_COLLECTION_EXPANDER';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -75,11 +70,6 @@ class PickingListDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideCommunicationLayerDependencies(Container $container): Container
     {
         $container = parent::provideCommunicationLayerDependencies($container);
@@ -88,11 +78,6 @@ class PickingListDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addWarehouseUserFacade(Container $container): Container
     {
         $container->set(static::FACADE_WAREHOUSE_USER, function (Container $container): PickingListToWarehouseUserInterface {
@@ -104,11 +89,6 @@ class PickingListDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addDatabaseConnection(Container $container): Container
     {
         $container->set(static::CONNECTION_DATABASE, function () {
@@ -118,11 +98,6 @@ class PickingListDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSalesFacade(Container $container): Container
     {
         $container->set(static::FACADE_SALES, function (Container $container): PickingListToSalesFacadeInterface {
@@ -142,11 +117,6 @@ class PickingListDependencyProvider extends AbstractBundleDependencyProvider
         return [];
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addPickingListPostCreatePlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_PICKING_LIST_POST_CREATE, function (): array {
@@ -164,11 +134,6 @@ class PickingListDependencyProvider extends AbstractBundleDependencyProvider
         return [];
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addPickingListPostUpdatePlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_PICKING_LIST_POST_UPDATE, function (): array {
@@ -186,11 +151,6 @@ class PickingListDependencyProvider extends AbstractBundleDependencyProvider
         return [];
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addPickingListGeneratorStrategyPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_PICKING_LIST_GENERATOR_STRATEGY, function (): array {
@@ -200,11 +160,6 @@ class PickingListDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addPickingListCollectionExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_PICKING_LIST_COLLECTION_EXPANDER, function () {

@@ -33,9 +33,6 @@ class IsPickingFinishedTest extends Unit
      */
     protected PickingListBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -43,9 +40,6 @@ class IsPickingFinishedTest extends Unit
         $this->tester->configureTestStateMachine([PickingListBusinessTester::DEFAULT_OMS_PROCESS_NAME]);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnTrueWhenNotAllPickingListItemsWerePicked(): void
     {
         // Arrange
@@ -61,9 +55,6 @@ class IsPickingFinishedTest extends Unit
         $this->assertTrue($pickingFinishedResponseTransfer->getOrders()->getIterator()->current()->getIsPickingFinishedOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnFalseWhenQuantityLessThenNumberOfPickedAndNotPicked(): void
     {
         // Arrange
@@ -90,9 +81,6 @@ class IsPickingFinishedTest extends Unit
         $this->assertFalse($pickingFinishedResponseTransfer->getOrders()->getIterator()->current()->getIsPickingFinishedOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnTrueWhenAllPickingListsFinishedForOrder(): void
     {
         // Arrange
@@ -124,9 +112,6 @@ class IsPickingFinishedTest extends Unit
         $this->assertTrue($pickingFinishedResponseTransfer->getOrders()->getIterator()->current()->getIsPickingFinishedOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnFalseWhenPickingListNotExistsForOrder(): void
     {
         // Arrange
@@ -141,9 +126,6 @@ class IsPickingFinishedTest extends Unit
         $this->assertFalse($pickingFinishedResponseTransfer->getOrders()->getIterator()->current()->getIsPickingFinishedOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnFalseWhenExistNotFinishedPickingListsForOrder(): void
     {
         // Arrange
@@ -160,9 +142,6 @@ class IsPickingFinishedTest extends Unit
         $this->assertFalse($pickingFinishedResponseTransfer->getOrders()->getIterator()->current()->getIsPickingFinishedOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnFalseWhenPickingListHasReadyForPickingStatus(): void
     {
         // Arrange
@@ -178,9 +157,6 @@ class IsPickingFinishedTest extends Unit
         $this->assertFalse($pickingFinishedResponseTransfer->getOrders()->getIterator()->current()->getIsPickingFinishedOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnFalseWhenPickingListHasPickingStartedStatus(): void
     {
         // Arrange
@@ -196,9 +172,6 @@ class IsPickingFinishedTest extends Unit
         $this->assertFalse($pickingFinishedResponseTransfer->getOrders()->getIterator()->current()->getIsPickingFinishedOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldCheckAllOrders(): void
     {
         // Arrange
@@ -219,9 +192,6 @@ class IsPickingFinishedTest extends Unit
         $this->assertFalse($pickingFinishedResponseTransfer->getOrders()->offsetGet(1)->getIsPickingFinishedOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenOrderDoesNotHaveIdSalesOrder(): void
     {
         // Arrange
@@ -234,9 +204,6 @@ class IsPickingFinishedTest extends Unit
         $this->tester->getFacade()->isPickingFinished($pickingFinishedRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenOrderItemDoesNotHaveUuid(): void
     {
         // Arrange

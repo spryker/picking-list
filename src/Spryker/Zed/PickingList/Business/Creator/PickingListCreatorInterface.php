@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\PickingListCollectionResponseTransfer;
 
 interface PickingListCreatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionRequestTransfer $pickingListCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListCollectionResponseTransfer
-     */
     public function createPickingListCollection(
         PickingListCollectionRequestTransfer $pickingListCollectionRequestTransfer
     ): PickingListCollectionResponseTransfer;

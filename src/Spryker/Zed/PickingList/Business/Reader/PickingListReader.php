@@ -54,11 +54,6 @@ class PickingListReader implements PickingListReaderInterface
         $this->pickingListCollectionExpanderPlugins = $pickingListCollectionExpanderPlugins;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCriteriaTransfer $pickingListCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListCollectionTransfer
-     */
     public function getPickingListCollection(
         PickingListCriteriaTransfer $pickingListCriteriaTransfer
     ): PickingListCollectionTransfer {
@@ -102,11 +97,6 @@ class PickingListReader implements PickingListReaderInterface
         return $pickingListTransfersGroupedByIdSalesOrder;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionTransfer $pickingListCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListCollectionTransfer
-     */
     protected function executePickingListCollectionExpanderPlugins(
         PickingListCollectionTransfer $pickingListCollectionTransfer
     ): PickingListCollectionTransfer {

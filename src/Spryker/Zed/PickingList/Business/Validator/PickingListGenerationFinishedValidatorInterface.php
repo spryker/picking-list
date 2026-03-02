@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\PickingListGenerationFinishedResponseTransfer;
 
 interface PickingListGenerationFinishedValidatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\PickingListGenerationFinishedRequestTransfer $pickingListGenerationFinishedRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListGenerationFinishedResponseTransfer
-     */
     public function isPickingListGenerationFinished(
         PickingListGenerationFinishedRequestTransfer $pickingListGenerationFinishedRequestTransfer
     ): PickingListGenerationFinishedResponseTransfer;

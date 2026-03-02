@@ -25,11 +25,6 @@ class PickingListToSalesFacadeBridge implements PickingListToSalesFacadeInterfac
         $this->salesFacade = $salesFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderItemFilterTransfer $orderItemFilterTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemCollectionTransfer
-     */
     public function getOrderItems(OrderItemFilterTransfer $orderItemFilterTransfer): ItemCollectionTransfer
     {
         return $this->salesFacade->getOrderItems($orderItemFilterTransfer);

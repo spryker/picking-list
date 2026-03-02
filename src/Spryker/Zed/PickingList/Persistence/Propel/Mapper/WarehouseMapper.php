@@ -14,12 +14,6 @@ use Orm\Zed\Stock\Persistence\SpyStock;
 
 class WarehouseMapper
 {
-    /**
-     * @param \Orm\Zed\Stock\Persistence\SpyStock $warehouseEntity
-     * @param \Generated\Shared\Transfer\StockTransfer $warehouseTransfer
-     *
-     * @return \Generated\Shared\Transfer\StockTransfer
-     */
     public function mapWarehouseEntityToWarehouseTransfer(
         SpyStock $warehouseEntity,
         StockTransfer $warehouseTransfer
@@ -27,12 +21,6 @@ class WarehouseMapper
         return $warehouseTransfer->fromArray($warehouseEntity->toArray(), true);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     * @param \Orm\Zed\PickingList\Persistence\SpyPickingList $pickingListEntity
-     *
-     * @return \Orm\Zed\PickingList\Persistence\SpyPickingList
-     */
     public function mapWarehouseToPickingListEntity(
         PickingListTransfer $pickingListTransfer,
         SpyPickingList $pickingListEntity

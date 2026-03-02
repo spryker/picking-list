@@ -120,9 +120,6 @@ class UnassignPickingListsFromUserTest extends Unit
         $this->assertEquals($initialUserCollectionTransfer, $returnedUserCollectionTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenUserUuidIsMissing(): void
     {
         // Arrange

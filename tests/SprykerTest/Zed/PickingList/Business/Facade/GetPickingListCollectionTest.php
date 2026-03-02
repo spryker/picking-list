@@ -54,9 +54,6 @@ class GetPickingListCollectionTest extends Unit
      */
     protected PickingListBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testGetPickingListShouldReturnEmptyCollectionWhenNoEntityMatchedByCriteria(): void
     {
         // Arrange
@@ -75,9 +72,6 @@ class GetPickingListCollectionTest extends Unit
         $this->assertPickingListCollectionIsEmpty($pickingListCollectionTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGetPickingListShouldReturnCollectionWithOnePickingListEntityWhenCriteriaMatched(): void
     {
         // Arrange
@@ -96,9 +90,6 @@ class GetPickingListCollectionTest extends Unit
         $this->assertPickingListCollectionContainsTransferWithId($pickingListCollectionTransfer, $pickingListTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGetPickingListShouldReturnCollectionWithTwoPickingListEntityWithUserUuidAndWithUnassignedUserFilters(): void
     {
         // Arrange
@@ -124,9 +115,6 @@ class GetPickingListCollectionTest extends Unit
         $this->assertPickingListCollectionContainsTransferWithId($pickingListCollectionTransfer, $pickingListTransfer2);
     }
 
-    /**
-     * @return void
-     */
     public function testGetPickingListShouldReturnCollectionWithOnePickingListEntityWithUnassignedUserFilters(): void
     {
         // Arrange
@@ -150,9 +138,6 @@ class GetPickingListCollectionTest extends Unit
         $this->assertPickingListCollectionContainsTransferWithId($pickingListCollectionTransfer, $pickingListTransfer2);
     }
 
-    /**
-     * @return void
-     */
     public function testGetPickingListShouldReturnCorrectCollectionOfPickingListEntityFilteredByIdWarehouse(): void
     {
         // Arrange
@@ -174,9 +159,6 @@ class GetPickingListCollectionTest extends Unit
         $this->assertPickingListCollectionContainsTransferWithId($pickingListCollectionTransfer, $pickingListTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGetPickingListShouldReturnCollectionExpandedWithOrderItemsWhenCriteriaMatched(): void
     {
         // Arrange
@@ -211,9 +193,6 @@ class GetPickingListCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testGetPickingListShouldReturnCollectionsOnlyWithRequestedPickingListItems(): void
     {
         // Arrange
@@ -265,9 +244,6 @@ class GetPickingListCollectionTest extends Unit
         $this->assertSame(static::TEST_UUID_2, $secondPickingListItemTransfer->getOrderItem()->getUuid());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldPaginateCollectionByOffsetAndLimit(): void
     {
         // Arrange
@@ -294,9 +270,6 @@ class GetPickingListCollectionTest extends Unit
         $this->assertSame(4, $pickingListCollectionTransfer->getPaginationOrFail()->getNbResults());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldPaginateCollectionByPageAndMaxPerPage(): void
     {
         // Arrange
@@ -334,9 +307,6 @@ class GetPickingListCollectionTest extends Unit
         $this->assertSame(1, $paginationTransfer->getPreviousPageOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldSortCollectionByCreatedAtAsc(): void
     {
         // Arrange
@@ -379,9 +349,6 @@ class GetPickingListCollectionTest extends Unit
         $this->assertSame($pickingListTransfer2->getIdPickingListOrFail(), $pickingListCollectionIterator->offsetGet(2)->getIdPickingList());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldSortCollectionByCreatedAtDesc(): void
     {
         // Arrange
@@ -424,11 +391,6 @@ class GetPickingListCollectionTest extends Unit
         $this->assertSame($pickingListTransfer3->getIdPickingListOrFail(), $pickingListCollectionIterator->offsetGet(2)->getIdPickingList());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionTransfer $pickingListCollectionTransfer
-     *
-     * @return void
-     */
     protected function assertPickingListCollectionIsEmpty(PickingListCollectionTransfer $pickingListCollectionTransfer): void
     {
         $this->assertCount(
@@ -441,12 +403,6 @@ class GetPickingListCollectionTest extends Unit
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionTransfer $pickingListCollectionTransfer
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     *
-     * @return void
-     */
     protected function assertPickingListCollectionContainsTransferWithId(
         PickingListCollectionTransfer $pickingListCollectionTransfer,
         PickingListTransfer $pickingListTransfer
@@ -468,11 +424,6 @@ class GetPickingListCollectionTest extends Unit
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListCriteriaTransfer
-     */
     protected function createPickingListCriteriaTransfer(PickingListTransfer $pickingListTransfer): PickingListCriteriaTransfer
     {
         $seed = [
@@ -494,11 +445,6 @@ class GetPickingListCollectionTest extends Unit
         return (new PickingListCriteriaBuilder())->withPickingListConditions($seed)->build();
     }
 
-    /**
-     * @param bool $withUser
-     *
-     * @return \Generated\Shared\Transfer\PickingListTransfer
-     */
     protected function createPickingListWithWarehouse(bool $withUser = true): PickingListTransfer
     {
         $pickingListTransfer = $this->tester->createPickingListTransfer([

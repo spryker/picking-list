@@ -23,20 +23,12 @@ class PickingListStatusGenerator implements PickingListStatusGeneratorInterface
      */
     protected PickingListRepositoryInterface $pickingListRepository;
 
-    /**
-     * @param \Spryker\Zed\PickingList\Persistence\PickingListRepositoryInterface $pickingListRepository
-     */
     public function __construct(
         PickingListRepositoryInterface $pickingListRepository
     ) {
         $this->pickingListRepository = $pickingListRepository;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     *
-     * @return string
-     */
     public function generatePickingListStatus(PickingListTransfer $pickingListTransfer): string
     {
         if ($this->isPickingFinished($pickingListTransfer)) {
@@ -50,11 +42,6 @@ class PickingListStatusGenerator implements PickingListStatusGeneratorInterface
         return PickingListConfig::STATUS_PICKING_STARTED;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     *
-     * @return bool
-     */
     protected function isPickingFinished(PickingListTransfer $pickingListTransfer): bool
     {
         /** @var \ArrayObject<int, \Generated\Shared\Transfer\PickingListItemTransfer> $pickingListItemTransferCollection */
@@ -74,11 +61,6 @@ class PickingListStatusGenerator implements PickingListStatusGeneratorInterface
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListItemCollectionTransfer
-     */
     protected function getExistingPickingListItemCollectionTransfer(
         PickingListTransfer $pickingListTransfer
     ): PickingListItemCollectionTransfer {
@@ -93,11 +75,6 @@ class PickingListStatusGenerator implements PickingListStatusGeneratorInterface
             );
     }
 
-    /**
-     * @param int $pickingListId
-     *
-     * @return \Generated\Shared\Transfer\PickingListItemCriteriaTransfer
-     */
     protected function createPickingListItemCriteriaTransfer(int $pickingListId): PickingListItemCriteriaTransfer
     {
         $pickingListItemConditionsTransfer = (new PickingListItemConditionsTransfer())
@@ -180,11 +157,6 @@ class PickingListStatusGenerator implements PickingListStatusGeneratorInterface
         return true;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListItemTransfer $pickingListItemTransfer
-     *
-     * @return bool
-     */
     protected function isItemPicked(PickingListItemTransfer $pickingListItemTransfer): bool
     {
         $quantity = $pickingListItemTransfer->getQuantityOrFail();

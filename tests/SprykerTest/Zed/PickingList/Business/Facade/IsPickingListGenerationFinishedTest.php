@@ -32,9 +32,6 @@ class IsPickingListGenerationFinishedTest extends Unit
      */
     protected PickingListBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -42,9 +39,6 @@ class IsPickingListGenerationFinishedTest extends Unit
         $this->tester->configureTestStateMachine([PickingListBusinessTester::DEFAULT_OMS_PROCESS_NAME]);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnTrueWhenPickingListExistsForOrder(): void
     {
         // Arrange
@@ -62,9 +56,6 @@ class IsPickingListGenerationFinishedTest extends Unit
         $this->assertTrue($pickingListGenerationFinishedResponseTransfer->getOrders()->getIterator()->current()->getIsPickingListGenerationFinished());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnFalseWhenPickingListNotExistsForOrder(): void
     {
         // Arrange
@@ -81,9 +72,6 @@ class IsPickingListGenerationFinishedTest extends Unit
         $this->assertFalse($pickingListGenerationFinishedResponseTransfer->getOrders()->getIterator()->current()->getIsPickingListGenerationFinished());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldCheckAllProvidedOrders(): void
     {
         // Arrange
@@ -103,9 +91,6 @@ class IsPickingListGenerationFinishedTest extends Unit
         $this->assertFalse($pickingListGenerationFinishedResponseTransfer->getOrders()->getIterator()->current()->getIsPickingListGenerationFinished());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldCheckAllOrders(): void
     {
         // Arrange
@@ -127,9 +112,6 @@ class IsPickingListGenerationFinishedTest extends Unit
         $this->assertFalse($pickingListGenerationFinishedResponseTransfer->getOrders()->offsetGet(1)->getIsPickingListGenerationFinished());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenOrderDoesNotHaveIdSalesOrder(): void
     {
         // Arrange
@@ -143,9 +125,6 @@ class IsPickingListGenerationFinishedTest extends Unit
         $this->tester->getFacade()->isPickingListGenerationFinished($pickingListGenerationFinishedRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenOrderItemDoesNotHaveUuid(): void
     {
         // Arrange

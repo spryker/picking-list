@@ -13,12 +13,6 @@ use Orm\Zed\PickingList\Persistence\SpyPickingList;
 
 class UserMapper
 {
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     * @param \Orm\Zed\PickingList\Persistence\SpyPickingList $pickingListEntity
-     *
-     * @return \Orm\Zed\PickingList\Persistence\SpyPickingList
-     */
     public function mapPickingListUserToPickingListEntity(
         PickingListTransfer $pickingListTransfer,
         SpyPickingList $pickingListEntity
@@ -35,12 +29,6 @@ class UserMapper
         return $pickingListEntity;
     }
 
-    /**
-     * @param \Orm\Zed\PickingList\Persistence\SpyPickingList $pickingListEntity
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListTransfer
-     */
     public function mapPickingListEntityUserToPickingListTransfer(
         SpyPickingList $pickingListEntity,
         PickingListTransfer $pickingListTransfer

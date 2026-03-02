@@ -13,11 +13,6 @@ use Generated\Shared\Transfer\PickingListCriteriaTransfer;
 
 interface PickingListReaderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCriteriaTransfer $pickingListCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListCollectionTransfer
-     */
     public function getPickingListCollection(
         PickingListCriteriaTransfer $pickingListCriteriaTransfer
     ): PickingListCollectionTransfer;

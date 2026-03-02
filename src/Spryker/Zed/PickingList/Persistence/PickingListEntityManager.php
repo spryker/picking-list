@@ -19,11 +19,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
  */
 class PickingListEntityManager extends AbstractEntityManager implements PickingListEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListTransfer
-     */
     public function createPickingList(PickingListTransfer $pickingListTransfer): PickingListTransfer
     {
         $persistedPickingListTransfer = $this->savePickingListEntity(
@@ -39,11 +34,6 @@ class PickingListEntityManager extends AbstractEntityManager implements PickingL
         return $persistedPickingListTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListTransfer
-     */
     public function updatePickingList(PickingListTransfer $pickingListTransfer): PickingListTransfer
     {
         $persistedPickingListTransfer = $this->updatePickingListEntity($pickingListTransfer);
@@ -59,12 +49,6 @@ class PickingListEntityManager extends AbstractEntityManager implements PickingL
         return $persistedPickingListTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     * @param \Orm\Zed\PickingList\Persistence\SpyPickingList $pickingListEntity
-     *
-     * @return \Generated\Shared\Transfer\PickingListTransfer
-     */
     protected function savePickingListEntity(
         PickingListTransfer $pickingListTransfer,
         SpyPickingList $pickingListEntity
@@ -84,11 +68,6 @@ class PickingListEntityManager extends AbstractEntityManager implements PickingL
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListTransfer|null
-     */
     protected function updatePickingListEntity(PickingListTransfer $pickingListTransfer): ?PickingListTransfer
     {
         $pickingListEntity = $this->getFactory()
@@ -106,12 +85,6 @@ class PickingListEntityManager extends AbstractEntityManager implements PickingL
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     * @param \Generated\Shared\Transfer\PickingListTransfer $persistedPickingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListTransfer
-     */
     protected function createPickingListItems(
         PickingListTransfer $pickingListTransfer,
         PickingListTransfer $persistedPickingListTransfer
@@ -129,12 +102,6 @@ class PickingListEntityManager extends AbstractEntityManager implements PickingL
         return $persistedPickingListTransfer->setPickingListItems($persistedPickingListItems);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     * @param \Generated\Shared\Transfer\PickingListTransfer $persistedPickingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListTransfer
-     */
     protected function updatePickingListItems(
         PickingListTransfer $pickingListTransfer,
         PickingListTransfer $persistedPickingListTransfer
@@ -148,12 +115,6 @@ class PickingListEntityManager extends AbstractEntityManager implements PickingL
         return $persistedPickingListTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListItemTransfer $pickingListItemTransfer
-     * @param \Generated\Shared\Transfer\PickingListTransfer $persistedPickingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListItemTransfer
-     */
     protected function createPickingListItem(
         PickingListItemTransfer $pickingListItemTransfer,
         PickingListTransfer $persistedPickingListTransfer
@@ -175,11 +136,6 @@ class PickingListEntityManager extends AbstractEntityManager implements PickingL
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListItemTransfer $pickingListItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListItemTransfer|null
-     */
     protected function updatePickingListItem(PickingListItemTransfer $pickingListItemTransfer): ?PickingListItemTransfer
     {
         $pickingListItemMapper = $this->getFactory()

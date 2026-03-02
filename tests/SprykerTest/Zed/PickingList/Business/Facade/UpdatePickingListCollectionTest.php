@@ -146,9 +146,6 @@ class UpdatePickingListCollectionTest extends Unit
         $this->assertPickingListCollectionResponseContainsPickingListItemTransfers($pickingListCollectionResponseTransfer, $numberOfItems);
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatePickingListCollectionShouldReturnCollectionWithOnePickingListEntityWhenEntityWasSavedNonTransactional(): void
     {
         // Arrange
@@ -173,9 +170,6 @@ class UpdatePickingListCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatePickingListCollectionShouldReturnCollectionWithOnePickingListEntityAndTwoPickingListItemEntitiesWhenEntityWasSavedNonTransactional(): void
     {
         // Arrange
@@ -204,9 +198,6 @@ class UpdatePickingListCollectionTest extends Unit
         $this->assertPickingListCollectionResponseContainsPickingListItemTransfers($pickingListCollectionResponseTransfer, 2);
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatePickingListCollectionAppliesPostUpdatePlugins(): void
     {
         // Arrange
@@ -231,9 +222,6 @@ class UpdatePickingListCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatePickingListCollectionShouldReturnErroredCollectionResponseWhenValidationRuleFailed(): void
     {
         // Arrange
@@ -256,9 +244,6 @@ class UpdatePickingListCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatePickingListCollectionShouldThrowExceptionWhenIsTransactionalNotSet(): void
     {
         // Arrange
@@ -275,9 +260,6 @@ class UpdatePickingListCollectionTest extends Unit
         $this->tester->getFacade()->updatePickingListCollection($pickingListCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatePickingListCollectionShouldThrowExceptionWhenPickingListIsEmpty(): void
     {
         // Arrange
@@ -293,9 +275,6 @@ class UpdatePickingListCollectionTest extends Unit
         $this->tester->getFacade()->updatePickingListCollection($pickingListCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatePickingListCollectionShouldThrowExceptionWhenPickingListUuidNotSet(): void
     {
         // Arrange
@@ -319,9 +298,6 @@ class UpdatePickingListCollectionTest extends Unit
             ->updatePickingListCollection($pickingListCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatePickingListCollectionShouldReturnErroredCollectionResponseWithOneErrorWhenPickingListUuidIsWrong(): void
     {
         // Arrange
@@ -347,9 +323,6 @@ class UpdatePickingListCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatePickingListCollectionShouldThrowExceptionWhenPickingListItemUuidNotSet(): void
     {
         // Arrange
@@ -373,9 +346,6 @@ class UpdatePickingListCollectionTest extends Unit
             ->updatePickingListCollection($pickingListCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatePickingListCollectionShouldReturnErroredCollectionResponseWithOneErrorWhenPickingListItemUuidIsWrong(): void
     {
         // Arrange
@@ -401,9 +371,6 @@ class UpdatePickingListCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatePickingListCollectionShouldReturnErroredCollectionResponseWithOneErrorWhenPickingListEntityNotFound(): void
     {
         // Arrange
@@ -431,9 +398,6 @@ class UpdatePickingListCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatePickingListCollectionShouldReturnErroredCollectionResponseWithOneErrorWhenPickingListItemEntityNotFound(): void
     {
         // Arrange
@@ -460,9 +424,6 @@ class UpdatePickingListCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatePickingListCollectionShouldThrowExceptionWhenPickingListItemQuantityIsNull(): void
     {
         // Arrange
@@ -482,9 +443,6 @@ class UpdatePickingListCollectionTest extends Unit
             ->updatePickingListCollection($pickingListCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatePickingListCollectionShouldReturnErroredCollectionResponseWithOneErrorWhenPickingListItemQuantityIsZero(): void
     {
         // Arrange
@@ -513,9 +471,6 @@ class UpdatePickingListCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatePickingListCollectionShouldThrowExceptionWhenPickingListItemNumberOfPickedNotSet(): void
     {
         // Arrange
@@ -535,9 +490,6 @@ class UpdatePickingListCollectionTest extends Unit
             ->updatePickingListCollection($pickingListCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatePickingListCollectionShouldThrowExceptionWhenPickingListItemNumberOfNotPickedNotSet(): void
     {
         // Arrange
@@ -557,9 +509,6 @@ class UpdatePickingListCollectionTest extends Unit
             ->updatePickingListCollection($pickingListCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatePickingListCollectionShouldReturnErroredCollectionResponseWithOneErrorWhenPickingFinishedAndPickingListProcessedQuantityIsZero(): void
     {
         // Arrange
@@ -629,9 +578,6 @@ class UpdatePickingListCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatePickingListCollectionShouldReturnCollectionWithOnePickingListEntityWhenPickingListItemOrderNotSet(): void
     {
         // Arrange
@@ -662,9 +608,6 @@ class UpdatePickingListCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatePickingListCollectionShouldReturnErroredCollectionResponseWithTwoErrorsWhenPickingListUserUuidIsChanged(): void
     {
         // Arrange
@@ -698,9 +641,6 @@ class UpdatePickingListCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatePickingListCollectionShouldReturnErroredCollectionResponseWithOneErrorWhenPickingListDuplicated(): void
     {
         // Arrange
@@ -723,9 +663,6 @@ class UpdatePickingListCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatePickingListCollectionShouldReturnErroredCollectionResponseWithOneErrorWhenPickingListItemDuplicated(): void
     {
         // Arrange
@@ -750,9 +687,6 @@ class UpdatePickingListCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatePickingListCollectionShouldReturnErroredCollectionResponseWithOneErrorWhenPickingListUserHasNoWarehouseUserAssignment(): void
     {
         // Arrange
@@ -811,14 +745,6 @@ class UpdatePickingListCollectionTest extends Unit
         ];
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionResponseTransfer $pickingListCollectionResponseTransfer
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     * @param string $uuid
-     * @param int $expectedCount
-     *
-     * @return void
-     */
     protected function assertPickingListCollectionResponseContainsTransferWithId(
         PickingListCollectionResponseTransfer $pickingListCollectionResponseTransfer,
         PickingListTransfer $pickingListTransfer,
@@ -834,12 +760,6 @@ class UpdatePickingListCollectionTest extends Unit
         $this->assertEquals($pickingListTransfer->getIdPickingList(), $updatedPickingListTransfer->getIdPickingList());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionResponseTransfer $pickingListCollectionResponseTransfer
-     * @param int $expectedNumberOfItems
-     *
-     * @return void
-     */
     protected function assertPickingListCollectionResponseContainsPickingListItemTransfers(
         PickingListCollectionResponseTransfer $pickingListCollectionResponseTransfer,
         int $expectedNumberOfItems
@@ -851,13 +771,6 @@ class UpdatePickingListCollectionTest extends Unit
         $this->assertCount($expectedNumberOfItems, $pickingListTransfer->getPickingListItems());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionResponseTransfer $pickingListCollectionResponseTransfer
-     * @param string $message
-     * @param int $expectedCount
-     *
-     * @return void
-     */
     protected function assertPickingListCollectionResponseContainsFailedValidationRuleError(
         PickingListCollectionResponseTransfer $pickingListCollectionResponseTransfer,
         string $message,
@@ -899,9 +812,6 @@ class UpdatePickingListCollectionTest extends Unit
         return $this->tester->havePickingList($pickingListTransfer);
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\PickingListTransfer
-     */
     protected function createPickingListTransferPersistedWithWarehouseAndOnePickingListItemWithoutQuantity(): PickingListTransfer
     {
         $pickingListItemTransfer = $this->tester->createPickingListItemTransferWithOrder();
@@ -914,9 +824,6 @@ class UpdatePickingListCollectionTest extends Unit
             ->addPickingListItem($pickingListItemTransfer->setQuantity(null));
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\PickingListTransfer
-     */
     protected function createPickingListTransferPersistedWithWarehouseAndOnePickingListItemWithoutUuid(): PickingListTransfer
     {
         $pickingListItemTransfer = $this->tester->createPickingListItemTransferWithOrder();
@@ -929,9 +836,6 @@ class UpdatePickingListCollectionTest extends Unit
             ->addPickingListItem($pickingListItemTransfer->setUuid(null));
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\PickingListTransfer
-     */
     protected function createPickingListTransferPersistedWithWarehouseAndOnePickingListItemWithWrongUuid(): PickingListTransfer
     {
         $pickingListItemTransfer = $this->tester->createPickingListItemTransferWithOrder();
@@ -944,9 +848,6 @@ class UpdatePickingListCollectionTest extends Unit
             ->addPickingListItem($pickingListItemTransfer->setUuid(static::FAKE_UUID));
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\PickingListTransfer
-     */
     protected function createPickingListTransferPersistedWithWarehouseAndOnePickingListItemWithoutNumberOfPicked(): PickingListTransfer
     {
         $pickingListItemTransfer = $this->tester->createPickingListItemTransferWithOrder();
@@ -959,9 +860,6 @@ class UpdatePickingListCollectionTest extends Unit
             ->addPickingListItem($pickingListItemTransfer->setNumberOfPicked(null));
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\PickingListTransfer
-     */
     protected function createPickingListTransferPersistedWithWarehouseAndOnePickingListItemWithoutNumberOfNotPicked(): PickingListTransfer
     {
         $pickingListItemTransfer = $this->tester->createPickingListItemTransferWithOrder();
@@ -974,9 +872,6 @@ class UpdatePickingListCollectionTest extends Unit
             ->addPickingListItem($pickingListItemTransfer->setNumberOfNotPicked(null));
     }
 
-    /**
-     * @return void
-     */
     protected function mockPickingListAlwaysFailingValidatorRule(): void
     {
         $pickingListValidatorRule = new class implements PickingListValidatorCompositeRuleInterface {
@@ -1004,9 +899,6 @@ class UpdatePickingListCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     protected function havePickingListPostUpdatePluginSetUuidTwoEnabled(): void
     {
         $this->tester->mockFactoryMethod(
@@ -1017,11 +909,6 @@ class UpdatePickingListCollectionTest extends Unit
         );
     }
 
-    /**
-     * @param string $uuid
-     *
-     * @return \Spryker\Zed\PickingListExtension\Dependency\Plugin\PickingListPostUpdatePluginInterface
-     */
     protected function mockUpdatePlugin(string $uuid): PickingListPostUpdatePluginInterface
     {
         return new class ($uuid) implements PickingListPostUpdatePluginInterface {
@@ -1030,19 +917,11 @@ class UpdatePickingListCollectionTest extends Unit
              */
             private $uuid;
 
-            /**
-             * @param string $uuid
-             */
             public function __construct(string $uuid)
             {
                 $this->uuid = $uuid;
             }
 
-            /**
-             * @param \Generated\Shared\Transfer\PickingListCollectionResponseTransfer $pickingListCollectionResponseTransfer
-             *
-             * @return \Generated\Shared\Transfer\PickingListCollectionResponseTransfer
-             */
             public function postUpdate(PickingListCollectionResponseTransfer $pickingListCollectionResponseTransfer): PickingListCollectionResponseTransfer
             {
                 foreach ($pickingListCollectionResponseTransfer->getPickingLists() as $pickingListTransfer) {

@@ -24,10 +24,6 @@ class PickingListGeneratorStrategyPluginMock implements PickingListGeneratorStra
      */
     protected bool $isApplicable;
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     * @param bool $isApplicable
-     */
     public function __construct(
         PickingListTransfer $pickingListTransfer,
         bool $isApplicable
@@ -36,21 +32,11 @@ class PickingListGeneratorStrategyPluginMock implements PickingListGeneratorStra
         $this->isApplicable = $isApplicable;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListOrderItemGroupTransfer $pickingListOrderItemGroupTransfer
-     *
-     * @return bool
-     */
     public function isApplicable(PickingListOrderItemGroupTransfer $pickingListOrderItemGroupTransfer): bool
     {
         return $this->isApplicable;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListOrderItemGroupTransfer $pickingListOrderItemGroupTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListCollectionTransfer
-     */
     public function generatePickingLists(PickingListOrderItemGroupTransfer $pickingListOrderItemGroupTransfer): PickingListCollectionTransfer
     {
         return (new PickingListCollectionTransfer())

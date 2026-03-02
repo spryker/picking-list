@@ -11,17 +11,7 @@ use Generated\Shared\Transfer\PickingListTransfer;
 
 interface PickingListEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListTransfer
-     */
     public function createPickingList(PickingListTransfer $pickingListTransfer): PickingListTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListTransfer
-     */
     public function updatePickingList(PickingListTransfer $pickingListTransfer): PickingListTransfer;
 }

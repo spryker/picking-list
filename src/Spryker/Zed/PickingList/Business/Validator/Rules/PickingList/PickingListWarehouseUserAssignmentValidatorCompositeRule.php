@@ -39,11 +39,6 @@ class PickingListWarehouseUserAssignmentValidatorCompositeRule extends AbstractP
      */
     protected WarehouseUserAssignmentGrouperInterface $warehouseUserAssignmentGrouper;
 
-    /**
-     * @param \Spryker\Zed\PickingList\Business\Extractor\PickingListExtractorInterface $pickingListExtractor
-     * @param \Spryker\Zed\PickingList\Business\Reader\WarehouseUserAssignmentReaderInterface $warehouseUserAssignmentReader
-     * @param \Spryker\Zed\PickingList\Business\Grouper\WarehouseUserAssignmentGrouperInterface $warehouseUserAssignmentGrouper
-     */
     public function __construct(
         PickingListExtractorInterface $pickingListExtractor,
         WarehouseUserAssignmentReaderInterface $warehouseUserAssignmentReader,

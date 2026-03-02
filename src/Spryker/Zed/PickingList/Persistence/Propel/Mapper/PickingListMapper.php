@@ -32,11 +32,6 @@ class PickingListMapper
      */
     protected UserMapper $userMapper;
 
-    /**
-     * @param \Spryker\Zed\PickingList\Persistence\Propel\Mapper\PickingListItemMapper $pickingListItemMapper
-     * @param \Spryker\Zed\PickingList\Persistence\Propel\Mapper\WarehouseMapper $warehouseMapper
-     * @param \Spryker\Zed\PickingList\Persistence\Propel\Mapper\UserMapper $userMapper
-     */
     public function __construct(
         PickingListItemMapper $pickingListItemMapper,
         WarehouseMapper $warehouseMapper,
@@ -47,12 +42,6 @@ class PickingListMapper
         $this->userMapper = $userMapper;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     * @param \Orm\Zed\PickingList\Persistence\SpyPickingList $pickingListEntity
-     *
-     * @return \Orm\Zed\PickingList\Persistence\SpyPickingList
-     */
     public function mapPickingListTransferToPickingListEntity(
         PickingListTransfer $pickingListTransfer,
         SpyPickingList $pickingListEntity
@@ -66,12 +55,6 @@ class PickingListMapper
         return $pickingListEntity;
     }
 
-    /**
-     * @param \Orm\Zed\PickingList\Persistence\SpyPickingList $pickingListEntity
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListTransfer
-     */
     public function mapPickingListEntityToPickingListTransfer(
         SpyPickingList $pickingListEntity,
         PickingListTransfer $pickingListTransfer
@@ -92,12 +75,6 @@ class PickingListMapper
         return $pickingListTransfer;
     }
 
-    /**
-     * @param \Orm\Zed\PickingList\Persistence\SpyPickingListItem $pickingListItemEntity
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListTransfer
-     */
     public function mapPickingListItemEntityToPickingListTransfer(
         SpyPickingListItem $pickingListItemEntity,
         PickingListTransfer $pickingListTransfer

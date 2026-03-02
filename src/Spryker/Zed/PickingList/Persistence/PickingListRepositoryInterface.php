@@ -14,20 +14,10 @@ use Generated\Shared\Transfer\PickingListItemCriteriaTransfer;
 
 interface PickingListRepositoryInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCriteriaTransfer $pickingListCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListCollectionTransfer
-     */
     public function getPickingListCollection(
         PickingListCriteriaTransfer $pickingListCriteriaTransfer
     ): PickingListCollectionTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListItemCriteriaTransfer $pickingListItemCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListItemCollectionTransfer
-     */
     public function getPickingListItemCollection(
         PickingListItemCriteriaTransfer $pickingListItemCriteriaTransfer
     ): PickingListItemCollectionTransfer;

@@ -19,19 +19,11 @@ class PickingListGenerationFinishedValidator implements PickingListGenerationFin
      */
     protected PickingListReaderInterface $pickingListReader;
 
-    /**
-     * @param \Spryker\Zed\PickingList\Business\Reader\PickingListReaderInterface $pickingListReader
-     */
     public function __construct(PickingListReaderInterface $pickingListReader)
     {
         $this->pickingListReader = $pickingListReader;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListGenerationFinishedRequestTransfer $pickingListGenerationFinishedRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListGenerationFinishedResponseTransfer
-     */
     public function isPickingListGenerationFinished(
         PickingListGenerationFinishedRequestTransfer $pickingListGenerationFinishedRequestTransfer
     ): PickingListGenerationFinishedResponseTransfer {

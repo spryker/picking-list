@@ -34,11 +34,6 @@ class PickingListUserAssigner implements PickingListUserAssignerInterface
      */
     protected PickingListConfig $pickingListConfig;
 
-    /**
-     * @param \Spryker\Zed\PickingList\Business\Reader\PickingListReaderInterface $pickingListReader
-     * @param \Spryker\Zed\PickingList\Business\Updater\PickingListUpdaterInterface $pickingListUpdater
-     * @param \Spryker\Zed\PickingList\PickingListConfig $pickingListConfig
-     */
     public function __construct(
         PickingListReaderInterface $pickingListReader,
         PickingListUpdaterInterface $pickingListUpdater,
@@ -49,11 +44,6 @@ class PickingListUserAssigner implements PickingListUserAssignerInterface
         $this->pickingListConfig = $pickingListConfig;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\UserCollectionTransfer $userCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\UserCollectionTransfer
-     */
     public function unassignPickingListsFromUsers(UserCollectionTransfer $userCollectionTransfer): UserCollectionTransfer
     {
         $userUuidsToUnassign = $this->extractUserUuidsApplicableForPickingListUnassignment($userCollectionTransfer);
@@ -76,11 +66,6 @@ class PickingListUserAssigner implements PickingListUserAssignerInterface
         return $userCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionTransfer $pickingListCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListCollectionTransfer
-     */
     protected function unassignPickingLists(PickingListCollectionTransfer $pickingListCollectionTransfer): PickingListCollectionTransfer
     {
         foreach ($pickingListCollectionTransfer->getPickingLists() as $pickingListTransfer) {
@@ -107,11 +92,6 @@ class PickingListUserAssigner implements PickingListUserAssignerInterface
         return array_unique($userUuids);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\UserTransfer $userTransfer
-     *
-     * @return bool
-     */
     protected function isUserApplicableForPickingListUnassignment(UserTransfer $userTransfer): bool
     {
         return $userTransfer->getIsWarehouseUser() &&

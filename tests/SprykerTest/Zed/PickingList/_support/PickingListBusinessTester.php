@@ -49,11 +49,6 @@ class PickingListBusinessTester extends Actor
      */
     public const DEFAULT_OMS_PROCESS_NAME = 'Test01';
 
-    /**
-     * @param int $idSalesOrder
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function getOrderTransfer(int $idSalesOrder): OrderTransfer
     {
         return $this->getLocator()
@@ -62,12 +57,6 @@ class PickingListBusinessTester extends Actor
             ->findOrderByIdSalesOrder($idSalesOrder);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     * @param \Generated\Shared\Transfer\StockTransfer $stockTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function expandOrderItemsWithWarehouse(
         OrderTransfer $orderTransfer,
         StockTransfer $stockTransfer
@@ -79,11 +68,6 @@ class PickingListBusinessTester extends Actor
         return $orderTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\StockTransfer $stockTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function createPersistedOrderTransferExpandedWithWarehouse(
         StockTransfer $stockTransfer
     ): OrderTransfer {
@@ -93,9 +77,6 @@ class PickingListBusinessTester extends Actor
         return $orderTransfer;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function createPersistedOrderTransfer(): OrderTransfer
     {
         $saveOrderTransfer = $this->haveOrder(
@@ -108,11 +89,6 @@ class PickingListBusinessTester extends Actor
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function createPersistedOrderTransferFromQuote(QuoteTransfer $quoteTransfer): OrderTransfer
     {
         $saveOrderTransfer = $this->haveOrderFromQuote(
@@ -125,9 +101,6 @@ class PickingListBusinessTester extends Actor
         );
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function createQuoteTransferWithThreeItems(): QuoteTransfer
     {
         return (new QuoteBuilder())
@@ -204,12 +177,6 @@ class PickingListBusinessTester extends Actor
             ->find();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     * @param bool $withUser
-     *
-     * @return void
-     */
     public function createPickingListByOrder(OrderTransfer $orderTransfer, bool $withUser = true): void
     {
         /** @var \ArrayObject<\Generated\Shared\Transfer\ItemTransfer> $itemTransferCollection */
@@ -234,11 +201,6 @@ class PickingListBusinessTester extends Actor
         $this->havePickingList($pickingListTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return void
-     */
     public function createPickingListWithOnePickedAndOneNotPickedItems(OrderTransfer $orderTransfer): void
     {
         /** @var \ArrayObject<\Generated\Shared\Transfer\ItemTransfer> $itemTransferCollection */
@@ -287,17 +249,11 @@ class PickingListBusinessTester extends Actor
         $pickingListFacade->createPickingListCollection($pickingListCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function ensurePickingListTableIsEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty($this->getPickingListQuery());
     }
 
-    /**
-     * @return \Orm\Zed\PickingList\Persistence\SpyPickingListQuery
-     */
     protected function getPickingListQuery(): SpyPickingListQuery
     {
         return SpyPickingListQuery::create();

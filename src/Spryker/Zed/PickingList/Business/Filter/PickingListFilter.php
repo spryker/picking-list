@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\PickingListCollectionTransfer;
 
 class PickingListFilter implements PickingListFilterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionResponseTransfer $pickingListCollectionResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListCollectionTransfer
-     */
     public function getValidPickingLists(
         PickingListCollectionResponseTransfer $pickingListCollectionResponseTransfer
     ): PickingListCollectionTransfer {
@@ -33,11 +28,6 @@ class PickingListFilter implements PickingListFilterInterface
         return $pickingListCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionResponseTransfer $pickingListCollectionResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListCollectionTransfer
-     */
     public function getInvalidPickingLists(
         PickingListCollectionResponseTransfer $pickingListCollectionResponseTransfer
     ): PickingListCollectionTransfer {
@@ -54,12 +44,6 @@ class PickingListFilter implements PickingListFilterInterface
         return $pickingListCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionTransfer $validPickingListCollectionTransfer
-     * @param \Generated\Shared\Transfer\PickingListCollectionTransfer $invalidPickingListCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListCollectionTransfer
-     */
     public function mergeValidAndInvalidPickingLists(
         PickingListCollectionTransfer $validPickingListCollectionTransfer,
         PickingListCollectionTransfer $invalidPickingListCollectionTransfer

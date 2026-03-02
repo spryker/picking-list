@@ -70,11 +70,6 @@ class PickingListGenerator implements PickingListGeneratorInterface
         $this->pickingListGeneratorStrategyPlugins = $pickingListGeneratorStrategyPlugins;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\GeneratePickingListsRequestTransfer $generatePickingListsRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListCollectionResponseTransfer
-     */
     public function generatePickingLists(GeneratePickingListsRequestTransfer $generatePickingListsRequestTransfer): PickingListCollectionResponseTransfer
     {
         $this->assertRequiredOrderItemProperties($generatePickingListsRequestTransfer);
@@ -93,11 +88,6 @@ class PickingListGenerator implements PickingListGeneratorInterface
             ->createPickingListCollection($pickingListCollectionRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\GeneratePickingListsRequestTransfer $generatePickingListsRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListCollectionTransfer
-     */
     protected function getPickingListCollectionTransfer(
         GeneratePickingListsRequestTransfer $generatePickingListsRequestTransfer
     ): PickingListCollectionTransfer {
@@ -231,12 +221,6 @@ class PickingListGenerator implements PickingListGeneratorInterface
             ->setWarehouse($stockTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionTransfer $generatedPickingListCollectionTransfer
-     * @param \Generated\Shared\Transfer\PickingListCollectionTransfer $pickingListCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListCollectionTransfer
-     */
     protected function mergePickingListCollectionTransfer(
         PickingListCollectionTransfer $generatedPickingListCollectionTransfer,
         PickingListCollectionTransfer $pickingListCollectionTransfer
@@ -248,11 +232,6 @@ class PickingListGenerator implements PickingListGeneratorInterface
         return $pickingListCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\GeneratePickingListsRequestTransfer $generatePickingListsRequestTransfer
-     *
-     * @return void
-     */
     protected function assertRequiredOrderItemProperties(GeneratePickingListsRequestTransfer $generatePickingListsRequestTransfer): void
     {
         $generatePickingListsRequestTransfer->requireOrderItems();

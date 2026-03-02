@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\PickingListCollectionTransfer;
 
 interface PickingListExpanderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionTransfer $pickingListCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListCollectionTransfer
-     */
     public function expandPickingListCollectionWithOrderItems(
         PickingListCollectionTransfer $pickingListCollectionTransfer
     ): PickingListCollectionTransfer;

@@ -25,11 +25,6 @@ class PickingListToWarehouseUserFacadeBridge implements PickingListToWarehouseUs
         $this->warehouseUserFacade = $warehouseUserFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\WarehouseUserAssignmentCriteriaTransfer $warehouseUserAssignmentCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\WarehouseUserAssignmentCollectionTransfer
-     */
     public function getWarehouseUserAssignmentCollection(
         WarehouseUserAssignmentCriteriaTransfer $warehouseUserAssignmentCriteriaTransfer
     ): WarehouseUserAssignmentCollectionTransfer {

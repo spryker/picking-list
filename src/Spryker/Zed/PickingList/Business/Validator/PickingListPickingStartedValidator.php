@@ -24,10 +24,6 @@ class PickingListPickingStartedValidator implements PickingListPickingStartedVal
      */
     protected PickingListConfig $pickingListConfig;
 
-    /**
-     * @param \Spryker\Zed\PickingList\Business\Reader\PickingListReaderInterface $pickingListReader
-     * @param \Spryker\Zed\PickingList\PickingListConfig $pickingListConfig
-     */
     public function __construct(
         PickingListReaderInterface $pickingListReader,
         PickingListConfig $pickingListConfig
@@ -36,11 +32,6 @@ class PickingListPickingStartedValidator implements PickingListPickingStartedVal
         $this->pickingListConfig = $pickingListConfig;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingStartedRequestTransfer $pickingStartedRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingStartedResponseTransfer
-     */
     public function isPickingStarted(
         PickingStartedRequestTransfer $pickingStartedRequestTransfer
     ): PickingStartedResponseTransfer {

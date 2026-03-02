@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\PickingListTransfer;
 
 interface PickingListStatusGeneratorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     *
-     * @return string
-     */
     public function generatePickingListStatus(
         PickingListTransfer $pickingListTransfer
     ): string;

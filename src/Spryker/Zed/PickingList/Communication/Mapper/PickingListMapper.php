@@ -28,12 +28,6 @@ class PickingListMapper implements PickingListMapperInterface
         return $generatePickingListsRequestTransfer->setOrderItems($itemTransfers);
     }
 
-    /**
-     * @param \Orm\Zed\Sales\Persistence\SpySalesOrderItem $salesOrderItemEntity
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function mapSalesOrderItemEntityToOrderTransfer(
         SpySalesOrderItem $salesOrderItemEntity,
         OrderTransfer $orderTransfer
@@ -48,12 +42,6 @@ class PickingListMapper implements PickingListMapperInterface
             ->addItem($itemTransfer);
     }
 
-    /**
-     * @param \Orm\Zed\Sales\Persistence\SpySalesOrderItem $salesOrderItemEntity
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function mapSalesOrderItemEntityToItemTransfer(
         SpySalesOrderItem $salesOrderItemEntity,
         ItemTransfer $itemTransfer

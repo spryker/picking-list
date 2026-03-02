@@ -49,9 +49,6 @@ class GeneratePickingListsTest extends Unit
      */
     protected PickingListBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -59,9 +56,6 @@ class GeneratePickingListsTest extends Unit
         $this->tester->configureTestStateMachine([PickingListBusinessTester::DEFAULT_OMS_PROCESS_NAME]);
     }
 
-    /**
-     * @return void
-     */
     public function testGeneratePickingListsShouldReturnCollectionWithOnePickingListEntity(): void
     {
         // Arrange
@@ -83,9 +77,6 @@ class GeneratePickingListsTest extends Unit
         $this->assertEmpty($pickingListCollectionResponseTransfer->getErrors());
     }
 
-    /**
-     * @return void
-     */
     public function testGeneratePickingListsShouldReturnCollectionWithTwoPickingListEntitiesWhenTwoWarehousesSet(): void
     {
         // Arrange
@@ -110,9 +101,6 @@ class GeneratePickingListsTest extends Unit
         $this->assertEmpty($pickingListCollectionResponseTransfer->getErrors());
     }
 
-    /**
-     * @return void
-     */
     public function testGeneratePickingListsShouldThrowExceptionWhenMissingStrategyPlugin(): void
     {
         // Arrange
@@ -132,9 +120,6 @@ class GeneratePickingListsTest extends Unit
             ->generatePickingLists($generatePickingListsRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGeneratePickingListsShouldThrowExceptionWhenOrderItemNotSet(): void
     {
         // Arrange
@@ -151,9 +136,6 @@ class GeneratePickingListsTest extends Unit
             ->generatePickingLists($generatePickingListsRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGeneratePickingListsShouldThrowExceptionWhenOrderItemUuidNotSet(): void
     {
         // Arrange
@@ -177,9 +159,6 @@ class GeneratePickingListsTest extends Unit
             ->generatePickingLists($generatePickingListsRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGeneratePickingListsShouldThrowExceptionWhenWarehouseNotSet(): void
     {
         // Arrange
@@ -197,9 +176,6 @@ class GeneratePickingListsTest extends Unit
             ->generatePickingLists($generatePickingListsRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGeneratePickingListsShouldThrowExceptionWhenIdWarehouseNotSet(): void
     {
         // Arrange
@@ -221,11 +197,6 @@ class GeneratePickingListsTest extends Unit
             ->generatePickingLists($generatePickingListsRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     protected function changeWarehouseForFirstPickingListItem(OrderTransfer $orderTransfer): OrderTransfer
     {
         /** @var \ArrayObject<\Generated\Shared\Transfer\ItemTransfer> $itemTransferCollection */
@@ -240,12 +211,6 @@ class GeneratePickingListsTest extends Unit
         return $orderTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     * @param bool $isApplicable
-     *
-     * @return void
-     */
     protected function havePickingListGeneratorStrategyPlugin(
         PickingListTransfer $pickingListTransfer,
         bool $isApplicable
@@ -258,12 +223,6 @@ class GeneratePickingListsTest extends Unit
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     * @param \Generated\Shared\Transfer\StockTransfer $stockTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListTransfer
-     */
     protected function createMockedPickingListTransfer(
         OrderTransfer $orderTransfer,
         StockTransfer $stockTransfer
@@ -285,13 +244,6 @@ class GeneratePickingListsTest extends Unit
         return $pickingListTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     * @param \Generated\Shared\Transfer\StockTransfer $stockTransfer
-     * @param bool $isApplicable
-     *
-     * @return void
-     */
     protected function mockPickingListGenerator(
         OrderTransfer $orderTransfer,
         StockTransfer $stockTransfer,
@@ -305,12 +257,6 @@ class GeneratePickingListsTest extends Unit
         $this->havePickingListGeneratorStrategyPlugin($mockedPickingListTransfer, $isApplicable);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     * @param bool $isApplicable
-     *
-     * @return \Spryker\Zed\PickingListExtension\Dependency\Plugin\PickingListGeneratorStrategyPluginInterface
-     */
     protected function createPickingListGeneratorStrategyPluginMock(
         PickingListTransfer $pickingListTransfer,
         bool $isApplicable

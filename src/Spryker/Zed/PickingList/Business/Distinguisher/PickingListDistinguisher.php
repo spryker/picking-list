@@ -33,11 +33,6 @@ class PickingListDistinguisher implements PickingListDistinguisherInterface
      */
     protected PickingListGrouperInterface $pickingListGrouper;
 
-    /**
-     * @param \Spryker\Zed\PickingList\Business\Extractor\PickingListExtractorInterface $pickingListExtractor
-     * @param \Spryker\Zed\PickingList\Persistence\PickingListRepositoryInterface $pickingListRepository
-     * @param \Spryker\Zed\PickingList\Business\Grouper\PickingListGrouperInterface $pickingListGrouper
-     */
     public function __construct(
         PickingListExtractorInterface $pickingListExtractor,
         PickingListRepositoryInterface $pickingListRepository,

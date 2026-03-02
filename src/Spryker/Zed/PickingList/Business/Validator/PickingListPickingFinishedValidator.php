@@ -19,19 +19,11 @@ class PickingListPickingFinishedValidator implements PickingListPickingFinishedV
      */
     protected PickingListReaderInterface $pickingListReader;
 
-    /**
-     * @param \Spryker\Zed\PickingList\Business\Reader\PickingListReaderInterface $pickingListReader
-     */
     public function __construct(PickingListReaderInterface $pickingListReader)
     {
         $this->pickingListReader = $pickingListReader;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingFinishedRequestTransfer $pickingFinishedRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingFinishedResponseTransfer
-     */
     public function isPickingFinished(
         PickingFinishedRequestTransfer $pickingFinishedRequestTransfer
     ): PickingFinishedResponseTransfer {

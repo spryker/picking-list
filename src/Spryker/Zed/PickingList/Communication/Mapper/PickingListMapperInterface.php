@@ -25,12 +25,6 @@ interface PickingListMapperInterface
         GeneratePickingListsRequestTransfer $generatePickingListsRequestTransfer
     ): GeneratePickingListsRequestTransfer;
 
-    /**
-     * @param \Orm\Zed\Sales\Persistence\SpySalesOrderItem $salesOrderItemEntity
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function mapSalesOrderItemEntityToOrderTransfer(
         SpySalesOrderItem $salesOrderItemEntity,
         OrderTransfer $orderTransfer

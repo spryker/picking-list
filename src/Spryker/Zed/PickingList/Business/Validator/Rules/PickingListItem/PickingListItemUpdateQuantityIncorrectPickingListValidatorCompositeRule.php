@@ -134,12 +134,6 @@ class PickingListItemUpdateQuantityIncorrectPickingListValidatorCompositeRule ex
         return $errorList;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListItemTransfer $pickingListItemTransfer
-     * @param \Generated\Shared\Transfer\PickingListItemTransfer $existingPickingListItemTransfer
-     *
-     * @return int
-     */
     protected function getQuantity(
         PickingListItemTransfer $pickingListItemTransfer,
         PickingListItemTransfer $existingPickingListItemTransfer

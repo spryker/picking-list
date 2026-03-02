@@ -67,9 +67,6 @@ use Spryker\Zed\PickingList\PickingListDependencyProvider;
  */
 class PickingListBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Reader\PickingListReaderInterface
-     */
     public function createPickingListReader(): PickingListReaderInterface
     {
         return new PickingListReader(
@@ -80,9 +77,6 @@ class PickingListBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Reader\WarehouseUserAssignmentReaderInterface
-     */
     public function createWarehouseUserAssignmentReader(): WarehouseUserAssignmentReaderInterface
     {
         return new WarehouseUserAssignmentReader(
@@ -90,9 +84,6 @@ class PickingListBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Creator\PickingListCreatorInterface
-     */
     public function createPickingListCreator(): PickingListCreatorInterface
     {
         return new PickingListCreator(
@@ -106,9 +97,6 @@ class PickingListBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Updater\PickingListUpdaterInterface
-     */
     public function createPickingListUpdater(): PickingListUpdaterInterface
     {
         return new PickingListUpdater(
@@ -122,9 +110,6 @@ class PickingListBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Generator\PickingListGeneratorInterface
-     */
     public function createPickingListGenerator(): PickingListGeneratorInterface
     {
         return new PickingListGenerator(
@@ -135,17 +120,11 @@ class PickingListBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Filter\PickingListFilterInterface
-     */
     public function createPickingListFilter(): PickingListFilterInterface
     {
         return new PickingListFilter();
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\StatusGenerator\PickingListStatusGeneratorInterface
-     */
     public function createPickingListStatusGenerator(): PickingListStatusGeneratorInterface
     {
         return new PickingListStatusGenerator(
@@ -153,9 +132,6 @@ class PickingListBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Validator\PickingListValidatorCompositeInterface
-     */
     public function createPickingListCreatorValidator(): PickingListValidatorCompositeInterface
     {
         return new PickingListValidatorComposite(
@@ -165,9 +141,6 @@ class PickingListBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Validator\PickingListValidatorCompositeInterface
-     */
     public function createPickingListUpdaterValidator(): PickingListValidatorCompositeInterface
     {
         return new PickingListValidatorComposite(
@@ -203,65 +176,41 @@ class PickingListBusinessFactory extends AbstractBusinessFactory
         ];
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Validator\PickingListValidatorCompositeRuleInterface
-     */
     public function createPickingListDuplicatedPickingListValidatorCompositeRule(): PickingListValidatorCompositeRuleInterface
     {
         return new PickingListDuplicatedPickingListValidatorCompositeRule();
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Validator\PickingListValidatorCompositeRuleInterface
-     */
     public function createPickingListItemDuplicatedPickingListValidatorCompositeRule(): PickingListValidatorCompositeRuleInterface
     {
         return new PickingListItemDuplicatedPickingListValidatorCompositeRule();
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Validator\PickingListValidatorCompositeRuleInterface
-     */
     public function createPickingListExistsPickingListValidatorCompositeRule(): PickingListValidatorCompositeRuleInterface
     {
         return new PickingListExistsPickingListValidatorCompositeRule();
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Validator\PickingListValidatorCompositeRuleInterface
-     */
     public function createPickingListItemExistsPickingListValidatorCompositeRule(): PickingListValidatorCompositeRuleInterface
     {
         return new PickingListItemExistsPickingListValidatorCompositeRule();
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Validator\PickingListValidatorCompositeRuleInterface
-     */
     public function createPickingListItemCreateQuantityIncorrectPickingListValidatorCompositeRule(): PickingListValidatorCompositeRuleInterface
     {
         return new PickingListItemCreateQuantityIncorrectPickingListValidatorCompositeRule();
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Validator\PickingListValidatorCompositeRuleInterface
-     */
     public function createPickingListItemUpdateQuantityIncorrectPickingListValidatorCompositeRule(): PickingListValidatorCompositeRuleInterface
     {
         return new PickingListItemUpdateQuantityIncorrectPickingListValidatorCompositeRule();
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Validator\PickingListValidatorCompositeRuleInterface
-     */
     public function createPickingListPickedByAnotherUserPickingListValidatorCompositeRule(): PickingListValidatorCompositeRuleInterface
     {
         return new PickingListPickedByAnotherUserPickingListValidatorCompositeRule();
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Validator\PickingListValidatorCompositeRuleInterface
-     */
     public function createPickingListWarehouseUserAssignmentValidatorCompositeRule(): PickingListValidatorCompositeRuleInterface
     {
         return new PickingListWarehouseUserAssignmentValidatorCompositeRule(
@@ -271,17 +220,11 @@ class PickingListBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Validator\PickingListGenerationFinishedValidatorInterface
-     */
     public function createPickingListGenerationFinishedValidator(): PickingListGenerationFinishedValidatorInterface
     {
         return new PickingListGenerationFinishedValidator($this->createPickingListReader());
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Validator\PickingListPickingStartedValidatorInterface
-     */
     public function createPickingListPickingStartedValidator(): PickingListPickingStartedValidatorInterface
     {
         return new PickingListPickingStartedValidator(
@@ -290,57 +233,36 @@ class PickingListBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Validator\PickingListPickingFinishedValidatorInterface
-     */
     public function createPickingListPickingFinishedValidator(): PickingListPickingFinishedValidatorInterface
     {
         return new PickingListPickingFinishedValidator($this->createPickingListReader());
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Mapper\PickingListMapperInterface
-     */
     public function createPickingListMapper(): PickingListMapperInterface
     {
         return new PickingListMapper();
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Grouper\PickingListGrouperInterface
-     */
     public function createPickingListGrouper(): PickingListGrouperInterface
     {
         return new PickingListGrouper();
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Grouper\WarehouseUserAssignmentGrouperInterface
-     */
     public function createWarehouseUserAssignmentGrouper(): WarehouseUserAssignmentGrouperInterface
     {
         return new WarehouseUserAssignmentGrouper();
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Extractor\WarehouseExtractorInterface
-     */
     public function createWarehouseExtractor(): WarehouseExtractorInterface
     {
         return new WarehouseExtractor();
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Expander\PickingListExpanderInterface
-     */
     public function createPickingListExpander(): PickingListExpanderInterface
     {
         return new PickingListExpander($this->getSalesFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Distinguisher\PickingListDistinguisherInterface
-     */
     public function createPickingListDistinguisher(): PickingListDistinguisherInterface
     {
         return new PickingListDistinguisher(
@@ -350,33 +272,21 @@ class PickingListBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Dependency\Facade\PickingListToSalesFacadeInterface
-     */
     public function getSalesFacade(): PickingListToSalesFacadeInterface
     {
         return $this->getProvidedDependency(PickingListDependencyProvider::FACADE_SALES);
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Extractor\PickingListExtractorInterface
-     */
     public function createPickingListExtractor(): PickingListExtractorInterface
     {
         return new PickingListExtractor();
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Dependency\Facade\PickingListToWarehouseUserInterface
-     */
     public function getWarehouseUserAssignmentFacade(): PickingListToWarehouseUserInterface
     {
         return $this->getProvidedDependency(PickingListDependencyProvider::FACADE_WAREHOUSE_USER);
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Business\Assigner\PickingListUserAssignerInterface
-     */
     public function createPickingListUserAssigner(): PickingListUserAssignerInterface
     {
         return new PickingListUserAssigner(
@@ -386,9 +296,6 @@ class PickingListBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Dependency\External\PickingListToDatabaseConnectionInterface
-     */
     public function getDatabaseConnection(): PickingListToDatabaseConnectionInterface
     {
         return $this->getProvidedDependency(PickingListDependencyProvider::CONNECTION_DATABASE);

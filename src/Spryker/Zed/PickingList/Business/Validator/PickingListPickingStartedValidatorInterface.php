@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\PickingStartedResponseTransfer;
 
 interface PickingListPickingStartedValidatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\PickingStartedRequestTransfer $pickingStartedRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingStartedResponseTransfer
-     */
     public function isPickingStarted(
         PickingStartedRequestTransfer $pickingStartedRequestTransfer
     ): PickingStartedResponseTransfer;

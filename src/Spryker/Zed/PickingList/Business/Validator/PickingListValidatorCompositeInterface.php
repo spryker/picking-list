@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\PickingListCollectionTransfer;
 
 interface PickingListValidatorCompositeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionTransfer $pickingListCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ErrorCollectionTransfer
-     */
     public function validateCollection(
         PickingListCollectionTransfer $pickingListCollectionTransfer
     ): ErrorCollectionTransfer;

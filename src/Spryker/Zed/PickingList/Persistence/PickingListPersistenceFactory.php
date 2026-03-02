@@ -22,25 +22,16 @@ use Spryker\Zed\PickingList\Persistence\Propel\Mapper\WarehouseMapper;
  */
 class PickingListPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\PickingList\Persistence\SpyPickingListQuery
-     */
     public function createPickingListQuery(): SpyPickingListQuery
     {
         return SpyPickingListQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\PickingList\Persistence\SpyPickingListItemQuery
-     */
     public function createPickingListItemQuery(): SpyPickingListItemQuery
     {
         return SpyPickingListItemQuery::create();
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Persistence\Propel\Mapper\PickingListMapper
-     */
     public function createPickingListMapper(): PickingListMapper
     {
         return new PickingListMapper(
@@ -50,25 +41,16 @@ class PickingListPersistenceFactory extends AbstractPersistenceFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Persistence\Propel\Mapper\PickingListItemMapper
-     */
     public function createPickingListItemMapper(): PickingListItemMapper
     {
         return new PickingListItemMapper();
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Persistence\Propel\Mapper\WarehouseMapper
-     */
     public function createWarehouseMapper(): WarehouseMapper
     {
         return new WarehouseMapper();
     }
 
-    /**
-     * @return \Spryker\Zed\PickingList\Persistence\Propel\Mapper\UserMapper
-     */
     public function createUserMapper(): UserMapper
     {
         return new UserMapper();

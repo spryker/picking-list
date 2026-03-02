@@ -20,19 +20,11 @@ class PickingListExpander implements PickingListExpanderInterface
      */
     protected PickingListToSalesFacadeInterface $salesFacade;
 
-    /**
-     * @param \Spryker\Zed\PickingList\Dependency\Facade\PickingListToSalesFacadeInterface $salesFacade
-     */
     public function __construct(PickingListToSalesFacadeInterface $salesFacade)
     {
         $this->salesFacade = $salesFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionTransfer $pickingListCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListCollectionTransfer
-     */
     public function expandPickingListCollectionWithOrderItems(
         PickingListCollectionTransfer $pickingListCollectionTransfer
     ): PickingListCollectionTransfer {

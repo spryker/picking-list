@@ -21,11 +21,6 @@ class PickingListHelper extends Module
     use LocatorHelperTrait;
     use DataCleanupHelperTrait;
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListTransfer|null
-     */
     public function havePickingList(PickingListTransfer $pickingListTransfer): ?PickingListTransfer
     {
         $pickingListCollectionRequestTransfer = (new PickingListCollectionRequestTransfer())
@@ -49,27 +44,16 @@ class PickingListHelper extends Module
         return $pickingListTransferCollection->getIterator()->current();
     }
 
-    /**
-     * @return \Orm\Zed\PickingList\Persistence\SpyPickingListQuery
-     */
     protected function createPickingListQuery(): SpyPickingListQuery
     {
         return SpyPickingListQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\PickingList\Persistence\SpyPickingListItemQuery
-     */
     protected function createPickingListItemQuery(): SpyPickingListItemQuery
     {
         return SpyPickingListItemQuery::create();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionResponseTransfer $pickingListCollectionResponseTransfer
-     *
-     * @return void
-     */
     protected function cleanupPickingListsWithItems(PickingListCollectionResponseTransfer $pickingListCollectionResponseTransfer): void
     {
         foreach ($pickingListCollectionResponseTransfer->getPickingLists() as $pickingListTransfer) {
@@ -81,11 +65,6 @@ class PickingListHelper extends Module
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     *
-     * @return void
-     */
     protected function cleanupPickingListItems(PickingListTransfer $pickingListTransfer): void
     {
         foreach ($pickingListTransfer->getPickingListItems() as $pickingListItemTransfer) {

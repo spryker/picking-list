@@ -32,9 +32,6 @@ class IsPickingStartedTest extends Unit
      */
     protected PickingListBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -42,9 +39,6 @@ class IsPickingStartedTest extends Unit
         $this->tester->configureTestStateMachine([PickingListBusinessTester::DEFAULT_OMS_PROCESS_NAME]);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnTrueWhenExistStartedPickingListsForOrder(): void
     {
         // Arrange
@@ -60,9 +54,6 @@ class IsPickingStartedTest extends Unit
         $this->assertTrue($pickingStartedResponseTransfer->getOrders()->getIterator()->current()->getIsPickingStartedOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnFalseWhenPickingListNotExistsForOrder(): void
     {
         // Arrange
@@ -77,9 +68,6 @@ class IsPickingStartedTest extends Unit
         $this->assertFalse($pickingStartedResponseTransfer->getOrders()->getIterator()->current()->getIsPickingStartedOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnFalseWhenPickingListHasReadyForPickingStatus(): void
     {
         // Arrange
@@ -95,9 +83,6 @@ class IsPickingStartedTest extends Unit
         $this->assertFalse($pickingStartedResponseTransfer->getOrders()->getIterator()->current()->getIsPickingStartedOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnTrueWhenPickingListHasPickingFinishedStatus(): void
     {
         // Arrange
@@ -113,9 +98,6 @@ class IsPickingStartedTest extends Unit
         $this->assertTrue($pickingStartedResponseTransfer->getOrders()->getIterator()->current()->getIsPickingStartedOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldCheckAllOrders(): void
     {
         // Arrange
@@ -136,9 +118,6 @@ class IsPickingStartedTest extends Unit
         $this->assertFalse($pickingStartedResponseTransfer->getOrders()->offsetGet(1)->getIsPickingStartedOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenOrderDoesNotHaveIdSalesOrder(): void
     {
         // Arrange
@@ -151,9 +130,6 @@ class IsPickingStartedTest extends Unit
         $this->tester->getFacade()->isPickingStarted($pickingStartedRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenOrderItemDoesNotHaveUuid(): void
     {
         // Arrange

@@ -45,13 +45,6 @@ class PickingListItemDuplicatedPickingListValidatorCompositeRule extends Abstrac
         return $errorCollectionTransfer;
     }
 
-    /**
-     * @param int $entityIdentifier
-     * @param \Generated\Shared\Transfer\ErrorCollectionTransfer $errorCollectionTransfer
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ErrorCollectionTransfer
-     */
     protected function executePickingListValidation(
         int $entityIdentifier,
         ErrorCollectionTransfer $errorCollectionTransfer,

@@ -29,11 +29,6 @@ class PickingListRepository extends AbstractRepository implements PickingListRep
 {
     use InstancePoolingTrait;
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCriteriaTransfer $pickingListCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListCollectionTransfer
-     */
     public function getPickingListCollection(
         PickingListCriteriaTransfer $pickingListCriteriaTransfer
     ): PickingListCollectionTransfer {
@@ -75,11 +70,6 @@ class PickingListRepository extends AbstractRepository implements PickingListRep
         return $pickingListCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListItemCriteriaTransfer $pickingListItemCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListItemCollectionTransfer
-     */
     public function getPickingListItemCollection(
         PickingListItemCriteriaTransfer $pickingListItemCriteriaTransfer
     ): PickingListItemCollectionTransfer {
@@ -128,12 +118,6 @@ class PickingListRepository extends AbstractRepository implements PickingListRep
         return $pickingListEntities;
     }
 
-    /**
-     * @param \Orm\Zed\PickingList\Persistence\SpyPickingListQuery $pickingListQuery
-     * @param \Generated\Shared\Transfer\PickingListCriteriaTransfer $pickingListCriteriaTransfer
-     *
-     * @return \Orm\Zed\PickingList\Persistence\SpyPickingListQuery
-     */
     protected function applyPickingListFilters(
         SpyPickingListQuery $pickingListQuery,
         PickingListCriteriaTransfer $pickingListCriteriaTransfer
@@ -146,12 +130,6 @@ class PickingListRepository extends AbstractRepository implements PickingListRep
         return $this->buildPickingListQueryByConditions($pickingListConditionsTransfer, $pickingListQuery);
     }
 
-    /**
-     * @param \Orm\Zed\PickingList\Persistence\SpyPickingListItemQuery $pickingListItemQuery
-     * @param \Generated\Shared\Transfer\PickingListItemCriteriaTransfer $pickingListItemCriteriaTransfer
-     *
-     * @return \Orm\Zed\PickingList\Persistence\SpyPickingListItemQuery
-     */
     protected function applyPickingListItemFilters(
         SpyPickingListItemQuery $pickingListItemQuery,
         PickingListItemCriteriaTransfer $pickingListItemCriteriaTransfer
@@ -169,12 +147,6 @@ class PickingListRepository extends AbstractRepository implements PickingListRep
         return $pickingListItemQuery;
     }
 
-    /**
-     * @param \Orm\Zed\PickingList\Persistence\SpyPickingListItemQuery $pickingListItemQuery
-     * @param \Generated\Shared\Transfer\PickingListCriteriaTransfer $pickingListCriteriaTransfer
-     *
-     * @return \Orm\Zed\PickingList\Persistence\SpyPickingListItemQuery
-     */
     protected function applyPickingListFiltersToPickingListItemQuery(
         SpyPickingListItemQuery $pickingListItemQuery,
         PickingListCriteriaTransfer $pickingListCriteriaTransfer
@@ -192,12 +164,6 @@ class PickingListRepository extends AbstractRepository implements PickingListRep
         return $pickingListItemQuery;
     }
 
-    /**
-     * @param \Orm\Zed\PickingList\Persistence\SpyPickingListQuery $pickingListQuery
-     * @param \Generated\Shared\Transfer\PaginationTransfer $paginationTransfer
-     *
-     * @return \Propel\Runtime\ActiveQuery\ModelCriteria
-     */
     protected function applyPickingListPagination(
         SpyPickingListQuery $pickingListQuery,
         PaginationTransfer $paginationTransfer
@@ -231,12 +197,6 @@ class PickingListRepository extends AbstractRepository implements PickingListRep
         return $pickingListQuery;
     }
 
-    /**
-     * @param \Orm\Zed\PickingList\Persistence\SpyPickingListQuery $pickingListQuery
-     * @param \Generated\Shared\Transfer\PickingListCriteriaTransfer $pickingListCriteriaTransfer
-     *
-     * @return \Orm\Zed\PickingList\Persistence\SpyPickingListQuery
-     */
     protected function applyPickingListSorting(
         SpyPickingListQuery $pickingListQuery,
         PickingListCriteriaTransfer $pickingListCriteriaTransfer

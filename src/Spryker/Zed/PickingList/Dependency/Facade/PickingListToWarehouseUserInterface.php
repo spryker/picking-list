@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\WarehouseUserAssignmentCriteriaTransfer;
 
 interface PickingListToWarehouseUserInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\WarehouseUserAssignmentCriteriaTransfer $warehouseUserAssignmentCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\WarehouseUserAssignmentCollectionTransfer
-     */
     public function getWarehouseUserAssignmentCollection(
         WarehouseUserAssignmentCriteriaTransfer $warehouseUserAssignmentCriteriaTransfer
     ): WarehouseUserAssignmentCollectionTransfer;

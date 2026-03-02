@@ -84,11 +84,6 @@ class PickingListCreator implements PickingListCreatorInterface
         $this->pickingListPostCreatePlugins = $pickingListPostCreatePlugins;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionRequestTransfer $pickingListCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListCollectionResponseTransfer
-     */
     public function createPickingListCollection(
         PickingListCollectionRequestTransfer $pickingListCollectionRequestTransfer
     ): PickingListCollectionResponseTransfer {
@@ -134,11 +129,6 @@ class PickingListCreator implements PickingListCreatorInterface
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionResponseTransfer $pickingListCollectionResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListCollectionResponseTransfer
-     */
     protected function executePickingListValidation(
         PickingListCollectionResponseTransfer $pickingListCollectionResponseTransfer
     ): PickingListCollectionResponseTransfer {
@@ -155,11 +145,6 @@ class PickingListCreator implements PickingListCreatorInterface
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionTransfer $pickingListCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListCollectionResponseTransfer
-     */
     protected function executeCreatePickingListCollectionTransaction(
         PickingListCollectionTransfer $pickingListCollectionTransfer
     ): PickingListCollectionResponseTransfer {
@@ -187,11 +172,6 @@ class PickingListCreator implements PickingListCreatorInterface
         return $pickingListCollectionResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListTransfer
-     */
     protected function executeCreatePickingList(PickingListTransfer $pickingListTransfer): PickingListTransfer
     {
         $status = $this->pickingListStatusGenerator
@@ -203,11 +183,6 @@ class PickingListCreator implements PickingListCreatorInterface
             ->createPickingList($pickingListTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionTransfer $pickingListCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListCollectionResponseTransfer
-     */
     protected function executePickingListPostCreatePlugins(
         PickingListCollectionTransfer $pickingListCollectionTransfer
     ): PickingListCollectionResponseTransfer {
@@ -225,11 +200,6 @@ class PickingListCreator implements PickingListCreatorInterface
         return $pickingListCollectionResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionRequestTransfer $pickingListCollectionRequestTransfer
-     *
-     * @return void
-     */
     protected function assertRequiredPickingListCollectionRequestTransferProperties(
         PickingListCollectionRequestTransfer $pickingListCollectionRequestTransfer
     ): void {
@@ -241,11 +211,6 @@ class PickingListCreator implements PickingListCreatorInterface
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     *
-     * @return void
-     */
     protected function assertRequiredPickingListTransferProperties(
         PickingListTransfer $pickingListTransfer
     ): void {
@@ -258,11 +223,6 @@ class PickingListCreator implements PickingListCreatorInterface
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListItemTransfer $pickingListItemTransfer
-     *
-     * @return void
-     */
     protected function assertRequiredPickingListItemTransferProperties(
         PickingListItemTransfer $pickingListItemTransfer
     ): void {

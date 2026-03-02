@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\OrderItemFilterTransfer;
 
 interface PickingListToSalesFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\OrderItemFilterTransfer $orderItemFilterTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemCollectionTransfer
-     */
     public function getOrderItems(OrderItemFilterTransfer $orderItemFilterTransfer): ItemCollectionTransfer;
 }

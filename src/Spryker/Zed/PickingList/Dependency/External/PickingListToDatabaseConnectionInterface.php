@@ -9,18 +9,9 @@ namespace Spryker\Zed\PickingList\Dependency\External;
 
 interface PickingListToDatabaseConnectionInterface
 {
-    /**
-     * @return bool
-     */
     public function beginTransaction(): bool;
 
-    /**
-     * @return bool
-     */
     public function commit(): bool;
 
-    /**
-     * @return bool
-     */
     public function rollBack(): bool;
 }

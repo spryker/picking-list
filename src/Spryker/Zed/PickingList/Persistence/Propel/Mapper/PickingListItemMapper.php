@@ -15,12 +15,6 @@ use Propel\Runtime\Collection\ObjectCollection;
 
 class PickingListItemMapper
 {
-    /**
-     * @param \Generated\Shared\Transfer\PickingListItemTransfer $pickingListItemTransfer
-     * @param \Orm\Zed\PickingList\Persistence\SpyPickingListItem $pickingListItemEntity
-     *
-     * @return \Orm\Zed\PickingList\Persistence\SpyPickingListItem
-     */
     public function mapPickingListItemTransferToPickingListItemEntity(
         PickingListItemTransfer $pickingListItemTransfer,
         SpyPickingListItem $pickingListItemEntity
@@ -60,12 +54,6 @@ class PickingListItemMapper
         return $pickingListItemCollectionTransfer;
     }
 
-    /**
-     * @param \Orm\Zed\PickingList\Persistence\SpyPickingListItem $pickingListItemEntity
-     * @param \Generated\Shared\Transfer\PickingListItemTransfer $pickingListItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListItemTransfer
-     */
     public function mapPickingListItemEntityToPickingListItemTransfer(
         SpyPickingListItem $pickingListItemEntity,
         PickingListItemTransfer $pickingListItemTransfer

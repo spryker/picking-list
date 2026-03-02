@@ -46,12 +46,6 @@ abstract class AbstractPickingListValidatorCompositeRule implements PickingListV
         return $errorCollectionTransfer;
     }
 
-    /**
-     * @param int $entityIdentifier
-     * @param string $error
-     *
-     * @return \Generated\Shared\Transfer\ErrorTransfer
-     */
     protected function createErrorTransfer(
         int $entityIdentifier,
         string $error

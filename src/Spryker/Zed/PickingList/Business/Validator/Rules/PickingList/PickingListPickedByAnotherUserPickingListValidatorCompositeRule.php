@@ -51,14 +51,6 @@ class PickingListPickedByAnotherUserPickingListValidatorCompositeRule extends Ab
         return $errorCollectionTransfer;
     }
 
-    /**
-     * @param int $entityIdentifier
-     * @param \Generated\Shared\Transfer\ErrorCollectionTransfer $errorCollectionTransfer
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     * @param \Generated\Shared\Transfer\PickingListTransfer $existingPickingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ErrorCollectionTransfer
-     */
     protected function executePickingListValidation(
         int $entityIdentifier,
         ErrorCollectionTransfer $errorCollectionTransfer,
@@ -88,11 +80,6 @@ class PickingListPickedByAnotherUserPickingListValidatorCompositeRule extends Ab
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListTransfer $pickingListTransfer
-     *
-     * @return string|null
-     */
     protected function getUserUuid(PickingListTransfer $pickingListTransfer): ?string
     {
         $pickingListUser = $pickingListTransfer->getUser();

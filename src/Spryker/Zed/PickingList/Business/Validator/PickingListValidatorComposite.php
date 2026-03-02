@@ -47,11 +47,6 @@ class PickingListValidatorComposite implements PickingListValidatorCompositeInte
         $this->validatorRules = $validatorRules;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionTransfer $pickingListCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ErrorCollectionTransfer
-     */
     public function validateCollection(
         PickingListCollectionTransfer $pickingListCollectionTransfer
     ): ErrorCollectionTransfer {
@@ -82,11 +77,6 @@ class PickingListValidatorComposite implements PickingListValidatorCompositeInte
         return $errorCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionTransfer $pickingListCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\PickingListCollectionTransfer
-     */
     protected function getExistingPickingListCollectionTransfer(
         PickingListCollectionTransfer $pickingListCollectionTransfer
     ): PickingListCollectionTransfer {
@@ -101,11 +91,6 @@ class PickingListValidatorComposite implements PickingListValidatorCompositeInte
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PickingListCollectionTransfer $pickingListCollectionTransfer
-     *
-     * @return bool
-     */
     protected function isNewPickingListCollection(
         PickingListCollectionTransfer $pickingListCollectionTransfer
     ): bool {
@@ -118,12 +103,6 @@ class PickingListValidatorComposite implements PickingListValidatorCompositeInte
         return true;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ErrorCollectionTransfer $sourceErrorCollectionTransfer
-     * @param \Generated\Shared\Transfer\ErrorCollectionTransfer $targetErrorCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ErrorCollectionTransfer
-     */
     protected function mergeErrorCollectionTransfers(
         ErrorCollectionTransfer $sourceErrorCollectionTransfer,
         ErrorCollectionTransfer $targetErrorCollectionTransfer
@@ -138,12 +117,6 @@ class PickingListValidatorComposite implements PickingListValidatorCompositeInte
         return $targetErrorCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ErrorCollectionTransfer $errorCollectionTransfer
-     * @param \Generated\Shared\Transfer\ErrorTransfer $targetErrorTransfer
-     *
-     * @return bool
-     */
     protected function hasError(ErrorCollectionTransfer $errorCollectionTransfer, ErrorTransfer $targetErrorTransfer): bool
     {
         foreach ($errorCollectionTransfer->getErrors() as $errorTransfer) {
